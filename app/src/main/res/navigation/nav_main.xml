@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_main">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/entryFragment"
+        android:name="com.example.codingnatorpoject.EntryFragment"
+        android:label="fragment_entry"
+        tools:layout="@layout/fragment_entry" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.codingnatorpoject.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_OXQuizFragment"
+            app:destination="@id/OXQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/OXQuizFragment"
+        android:name="com.example.codingnatorpoject.OXQuizFragment"
+        android:label="fragment_o_x_quiz"
+        tools:layout="@layout/fragment_o_x_quiz" >
+        <action
+            android:id="@+id/action_OXQuizFragment_to_fourChooseQuizFragment"
+            app:destination="@id/fourChooseQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourChooseQuizFragment"
+        android:name="com.example.codingnatorpoject.FourChooseQuizFragment"
+        android:label="fragment_four_choose_quiz"
+        tools:layout="@layout/fragment_four_choose_quiz" />
 </navigation>
